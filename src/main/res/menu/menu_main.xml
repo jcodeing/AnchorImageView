@@ -1,0 +1,25 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.jcodeing.myapplication.MainActivity">
+    <item
+        android:id="@+id/action_mark_anchor"
+        android:orderInCategory="100"
+        android:title="@string/mark_anchor"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_clean_mark_anchor"
+        android:orderInCategory="100"
+        android:title="@string/clean_mark_anchor"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_click_anchor"
+        android:orderInCategory="100"
+        android:title="@string/click_anchor"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_s_h_clickable_anchor"
+        android:orderInCategory="100"
+        android:title="@string/s_h_clickable_anchor"
+        app:showAsAction="never" />
+</menu>

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">AnchorImageView</string>
+    <string name="mark_anchor">Mark Anchor</string>
+    <string name="clean_mark_anchor">Clean Mark Anchor</string>
+    <string name="click_anchor">Click Anchor</string>
+    <string name="s_h_clickable_anchor">S/H Clickable Anchor</string>
+</resources>
