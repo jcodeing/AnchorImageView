@@ -1,8 +1,8 @@
 # AnchorImageView #
 Anchor point positioning ImageView For [Android](https://raw.githubusercontent.com/jcodeing/AnchorImageView/master/AnchorImageView-debug.apk)
 
-![](https://raw.githubusercontent.com/jcodeing/AnchorImageView/master/lookme.jpg)
 ![](https://raw.githubusercontent.com/jcodeing/AnchorImageView/master/lookme.gif)
+![](https://raw.githubusercontent.com/jcodeing/AnchorImageView/master/lookme.jpg)
 
 Introduction
 ============
