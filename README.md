@@ -1,6 +1,7 @@
 # AnchorImageView #
 Anchor point positioning ImageView For [Android](https://raw.githubusercontent.com/jcodeing/AnchorImageView/master/AnchorImageView-debug.apk)
 
+![](https://raw.githubusercontent.com/jcodeing/AnchorImageView/master/lookme.jpg)
 ![](https://raw.githubusercontent.com/jcodeing/AnchorImageView/master/lookme.gif)
 
 Introduction
@@ -9,6 +10,7 @@ Introduction
 	locates the anchored area.
 	Demo shows a simple Click on the content area,
 	in the book to respond to the action.
+License
 =======
 	MIT License
 
