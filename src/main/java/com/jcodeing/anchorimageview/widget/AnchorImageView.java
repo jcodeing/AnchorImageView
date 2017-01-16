@@ -231,8 +231,8 @@ public class AnchorImageView extends ImageView implements View.OnTouchListener {
 
     @Override
     public void setImageBitmap(Bitmap bm) {
-        setWidthHeightRatio((float) parentWidth * 1f / (float) bm.getWidth(), (float) parentHeight * 1f / (float) bm.getHeight());
         super.setImageBitmap(bm);
+        calculateWidthHeightRatio();
     }
 
     // ============================@Set/Get@============================
@@ -241,9 +241,9 @@ public class AnchorImageView extends ImageView implements View.OnTouchListener {
         parentHeight = height;
     }
 
-    public void setWidthHeightRatio(float widthRatio, float heightRatio) {
-        this.widthRatio = widthRatio;
-        this.heightRatio = heightRatio;
+    public void calculateWidthHeightRatio() {
+        widthRatio = (float) parentWidth / getDrawable().getIntrinsicWidth();
+        heightRatio = (float) parentHeight / getDrawable().getIntrinsicHeight();
     }
 
     public void setCurrentClickAnchor(Anchor anchor) {
@@ -383,10 +383,10 @@ public class AnchorImageView extends ImageView implements View.OnTouchListener {
 
             rectClickAnchor.set(leftP * widthRatio, topP * heightRatio, rightP * widthRatio, bottomP * heightRatio);
 
-            leftDMovElement = leftD * 1f / diffMovElementTotal;
-            rightDMovElement = rightD * 1f / diffMovElementTotal;
-            topDMovElement = topD * 1f / diffMovElementTotal;
-            bottomDMovElement = bottomD * 1f / diffMovElementTotal;
+            leftDMovElement = leftD / diffMovElementTotal;
+            rightDMovElement = rightD / diffMovElementTotal;
+            topDMovElement = topD / diffMovElementTotal;
+            bottomDMovElement = bottomD / diffMovElementTotal;
         }
 
         public void run() {

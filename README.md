@@ -6,10 +6,12 @@ Anchor point positioning ImageView For [Android](https://raw.githubusercontent.c
 
 Introduction
 ============
-	An ImageView that anchors points according to the pixels,
+    一个可以锚点定位的 ImageView(根据像素点)
+    Demo 中通过 AnchorImageView 简单的实现了一个课本点读的功能
+	[An ImageView that anchors points according to the pixels,
 	locates the anchored area.
 	Demo shows a simple Click on the content area,
-	in the book to respond to the action.
+	in the book to respond to the action.]
 License
 =======
 	MIT License
