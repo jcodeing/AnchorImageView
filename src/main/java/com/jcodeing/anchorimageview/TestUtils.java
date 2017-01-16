@@ -25,17 +25,19 @@
 package com.jcodeing.anchorimageview;
 
 import android.content.Context;
+import android.content.res.AssetFileDescriptor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.util.SparseArray;
 
 import java.io.InputStream;
 import java.util.TreeMap;
 
-public class TestUtils {
+class TestUtils {
 
-    public static TreeMap<Integer, Anchor> getAnchors() {
+    static TreeMap<Integer, Anchor> getAnchors() {
         TreeMap<Integer, Anchor> anchors = new TreeMap<>();
-        anchors.put(1, new Anchor(1721, 223, 615, 59, 156, 1, "Unit Two"));
+        anchors.put(1, new Anchor(1721, 223, 615, 59, 156, 1, "Unit Two, My schoolbag"));
         anchors.put(2, new Anchor(2721, 102, 445, 235, 318, 2, "John, I have a new schoolbag."));
         anchors.put(3, new Anchor(3721, 220, 420, 351, 423, 3, "May I see it?"));
         anchors.put(4, new Anchor(4721, 186, 435, 729, 801, 4, "I lost my notebook."));
@@ -44,12 +46,31 @@ public class TestUtils {
         return anchors;
     }
 
-    public static Bitmap getAnchorImage(Context context) {
+    static Bitmap getAnchorImage(Context context) {
         try {
             InputStream anchorIS = context.getAssets().open("anchor_test.png");
             return BitmapFactory.decodeStream(anchorIS);
         } catch (Exception e) {//IO
             return null;
         }
+    }
+
+    static AssetFileDescriptor getAnchorAudio(Context context) {
+        try {
+            return context.getAssets().openFd("anchor.mp3");
+        } catch (Exception e) {//IO
+            return null;
+        }
+    }
+
+    static SparseArray<AudioParagraph> getAudioParagraphs() {
+        SparseArray<AudioParagraph> audioParagraphs = new SparseArray<>();
+        audioParagraphs.put(1, new AudioParagraph(0, 2970));
+        audioParagraphs.put(2, new AudioParagraph(4680, 7170));
+        audioParagraphs.put(3, new AudioParagraph(7960, 9470));
+        audioParagraphs.put(4, new AudioParagraph(11720, 13600));
+        audioParagraphs.put(5, new AudioParagraph(14380, 15650));
+        audioParagraphs.put(6, new AudioParagraph(16480, 19330));
+        return audioParagraphs;
     }
 }

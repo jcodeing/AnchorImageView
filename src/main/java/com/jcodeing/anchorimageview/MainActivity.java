@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity implements AnchorImageView.O
     // =========@Data@=========
     TreeMap<Integer, Anchor> markAnchors;
     AnchorIvOperationMode anchorIvOM = AnchorIvOperationMode.CLICK;
+    private AudioLoader audioLoader;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,6 +72,15 @@ public class MainActivity extends AppCompatActivity implements AnchorImageView.O
                 activityMain.getViewTreeObserver().removeOnGlobalLayoutListener(this);
             }
         });
+
+        audioLoader = new AudioLoader(TestUtils.getAnchorAudio(this), TestUtils.getAudioParagraphs());
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (audioLoader != null)
+            audioLoader.stopAndRelease();
     }
 
     @Override
@@ -108,6 +118,8 @@ public class MainActivity extends AppCompatActivity implements AnchorImageView.O
         if (anchorIvOM.equals(AnchorIvOperationMode.CLICK)) {
             anchorIv.setCurrentClickAnchor(anchor);
             showToast(anchor.subtitle);
+            if (audioLoader != null)
+                audioLoader.playByParagraph(anchor.sequence);
         } else if (anchorIvOM.equals(AnchorIvOperationMode.MARK)) {
             if (markAnchors.containsKey(anchor.sequence)) {
                 markAnchors.remove(anchor.sequence);
